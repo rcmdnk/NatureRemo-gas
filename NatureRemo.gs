@@ -16,10 +16,12 @@ function fillNatureRemo(){
 }
 
 function getNatureRemoData(target){
+  if (typeof ACCESS_TOKEN === 'undefined') throw new Error('Set ACCESS_TOKEN'); 
+
   var url = "https://api.nature.global/1/" + target;
   var headers = {
     "Content-Type" : "application/json;",
-    'Authorization': 'Bearer ' + access_token,
+    'Authorization': 'Bearer ' + ACCESS_TOKEN,
   };
   var options = {
     "method" : "get",
