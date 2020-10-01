@@ -1,0 +1,1 @@
+var TIME_ZONE = 'Asia/Tokyo';
