@@ -41,14 +41,14 @@ function appliances() {
   var li_last_button = "";
   var li_state = 0;
   data.forEach(function(e) {
-    if(e.nickname == "エアコン"){
+    if(e.nickname == NICKNAME_AIR_CONDITIONER){
       ac_temp = e.settings.temp;
       ac_mode = e.settings.mode;
       ac_button = e.settings.button;
       if(ac_button != "power-off"){
         ac_state = 1;
       }
-    }else if(e.nickname == "照明"){
+    }else if(e.nickname == NICKNAME_LIGHT){
       li_brightness = e.light.state.brightness;
       li_power = e.light.state.power;
       li_last_button = e.light.state.last_button;
