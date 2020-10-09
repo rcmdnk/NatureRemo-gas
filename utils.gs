@@ -6,9 +6,9 @@ function getSheet(name, cols=[], formatA='yyyy/MM/dd HH:mm:ss') {
     sheet = ss.insertSheet(name);
     // remain 1 additional row, to frozen first row
     // (need additional rows to fix rows)
-    sheet.deleteRows(2, sheet.getMaxRows()-2);
+    sheet.deleteRows(1, sheet.getMaxRows()-2);
     var nCols = cols ? cols.length: 1;
-    sheet.deleteColumns(2, sheet.getMaxColumns()-1);
+    sheet.deleteColumns(1, sheet.getMaxColumns()-1);
     cols.forEach(function(c, i) {
       sheet.getRange(1, i+1).setValue(c);
     });
@@ -22,7 +22,6 @@ function fillValues(sheetName, columns, data, formatA='yyyy/MM/dd HH:mm:ss') {
   var sheet = getSheet(sheetName, columns, formatA);
   var datetimes = sheet.getRange('A:A').getDisplayValues().flat();
   var data_new = [];
-  var toString = Object.prototype.toString;
   data.forEach(function(d) {
     if (datetimes.includes(d[0])) return;
     data_new.push(d);
