@@ -1,5 +1,5 @@
 # NatureRemo-gas
-Google App Script for Nature Remo API
+Google Apps Script for Nature Remo API
 
 ## Installation
 
